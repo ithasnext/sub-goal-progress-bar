@@ -59,16 +59,6 @@
       "value": 22,
       "step": 1
     },
-    "goalTextAlign": {
-      "type": "dropdown",
-      "label":"Goal Text Alignment",
-      "value": "center",
-      "options": {
-        "center": "Center Aligned",
-        "left": "Left Aligned",
-        "right": "Right Aligned"
-      }
-    },
     "fontColor": {
       "type": "colorpicker",
       "label": "Goal Number Font color",
