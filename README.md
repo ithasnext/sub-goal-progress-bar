@@ -1,7 +1,7 @@
 # sub-goal-progress-bar
 Code for a Streamelements widget that is configurable to track only certain sub events.
 
-This is not a published Widget in the StreamElements' gallery so to use this go to the overlay you want to add this to.
+This is not a published Widget in the StreamElements' gallery so to use these steps to add this to your overlay.
 
 Click on the blue button with the plus at the bottom left of the overlay display area.
 
