@@ -20,10 +20,10 @@ Click on the Open Editor button
 
 Take the code from each of the files in this repository and replace the corresponding code under the headings as follows:
 
-main.html goes into HTML
-main.css goes into CSS
-main.js goes into JS
-main.json goes into FIELDS
+widget.html goes into HTML
+widget.css goes into CSS
+widget.js goes into JS
+widget.json goes into FIELDS
 
 Click the DONE button in the bottom right of the popup that you've been replacing code in.
 
