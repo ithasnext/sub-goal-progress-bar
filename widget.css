@@ -1,0 +1,36 @@
+* {
+    font-family: '{fontName}', sans-serif;
+    font-weight: {fontWeight};
+}
+#labelText {
+  	display: flex;
+  	justify-content: {{goalTextHAlign}};
+  	align-items: {{goalTextVAlign}};
+	margin:auto;
+	height: {{boxHeight}}px;
+	width: {{boxWidth}}px;
+  	align-items: {{goalTextAlign}};
+	color:{{goalTextColor}};
+	font-size:{{goalTextSize}}px;
+	text-indent:{{goalTextIndent}};
+    position:absolute;
+}
+#goalText {
+  	text-align: right;
+	margin:auto;
+	line-height: {{boxHeight}}px;
+	width: {{boxWidth}}px;
+	color:{{fontColor}};
+	text-indent:{{goalNumberIndent}};
+	font-size:{{goalNumberSize}}px;
+    position:absolute;
+}
+#progress {
+	float:left;
+  	height:0px;
+  	width:0px;
+  	background-color:{{fillColor}}; 
+  	position:absolute;
+  	left: 0px;
+  	top: 0px;
+}

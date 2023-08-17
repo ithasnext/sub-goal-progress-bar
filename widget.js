@@ -7,7 +7,8 @@ let includePrimeSubs = false,
     progressColor = "";
 
 let background,
-    progress;
+    progress,
+   	fieldData;
 
 window.addEventListener('onEventReceived', function (obj) {
     if (!obj.detail.event) {
@@ -43,7 +44,7 @@ window.addEventListener('onEventReceived', function (obj) {
 });
 
 window.addEventListener('onWidgetLoad', function (obj) {
-  	const fieldData = obj.detail.fieldData;
+  	fieldData = obj.detail.fieldData;
   	includePrimeSubs = (fieldData.includePrimeSubs === "yes");
 	includeGiftSubs = (fieldData.includeGiftSubs === "yes");
     subGoal = parseInt(fieldData.subGoal);
@@ -59,5 +60,4 @@ window.addEventListener('onWidgetLoad', function (obj) {
 function updateProgress() {
 	const percentage = Math.min(currentProgress / subGoal, 1);	
   	document.getElementById("progress").style.width = ({{boxWidth}} * percentage) + "px";
-  	
 }
