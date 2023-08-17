@@ -1,0 +1,41 @@
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<div class="main-container" style="position:relative;width:{{boxWidth}};height:{{boxHeight}}">
+
+<div id="background" style="
+  	height:0px;
+  	width:0px;
+  background-color:{{backgroundColor}};">
+<div id="progress" style="
+	float:left;
+  	height:0px;
+  	width:0px;
+  background-color:{{fillColor}}; position:absolute;
+  left: 0px;
+  top: 0px;">
+  </div>
+  <div id="labelText" style="
+  	text-align: center;
+	margin:auto;
+	line-height: {{boxHeight}}px;
+	width: {{boxWidth}}px;
+  	justify-content: {{goalTextAlign}};
+  	align-items: {{goalTextAlign}};
+	color:{{goalTextColor}};
+	font-size:{{goalTextSize}}px;
+                             text-indent:{{goalTextIndent}};
+                             font-family:{{goalFontFamily}};
+                             position:absolute;
+ 
+  	">
+    {{progressLabel}}</div>
+  <div id="goalText" style="
+  	text-align: right;
+	margin:auto;
+	line-height: {{boxHeight}}px;
+	width: {{boxWidth}}px;
+	color:{{fontColor}};
+	text-indent:{{goalNumberIndent}};
+	font-size:{{goalNumberSize}}px;
+	font-family:{{goalNumberFamily}};
+    position:absolute;">
+    {{subGoal}}</div></div></div>
