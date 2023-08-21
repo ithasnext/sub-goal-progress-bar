@@ -19,7 +19,13 @@ window.addEventListener('onEventReceived', function (obj) {
     }
     const listener = obj.detail.listener.split("-")[0];
     const event = obj.detail.event;
-	
+  
+	if (event.listener === 'widget-button' && event.field === 'setGoalButton') {
+		SE_API.store.set('seventyThirtySplit.subCount', {currentSubs: parseInt(fieldData.currentProgress)});  	
+      	currentProgress = parseInt(fieldData.currentProgress);
+      	updateProgress();
+	}
+  
   	if (listener === 'subscriber') {
         if (event.tier === "prime") {
           	if (includePrimeSubs) {
@@ -39,6 +45,7 @@ window.addEventListener('onEventReceived', function (obj) {
         else {
         	currentProgress++;
         }
+		SE_API.store.set('seventyThirtySplit.subCount', {currentSubs: parseInt(fieldData.currentProgress)}); 
       	updateProgress();
     }
 });
@@ -48,13 +55,17 @@ window.addEventListener('onWidgetLoad', function (obj) {
   	includePrimeSubs = (fieldData.includePrimeSubs === "yes");
 	includeGiftSubs = (fieldData.includeGiftSubs === "yes");
     subGoal = parseInt(fieldData.subGoal);
-    currentProgress = parseInt(fieldData.currentProgress);
   	background = document.getElementById("background").style;
     background.width = {{boxWidth}}+"px";
 	background.height = {{boxHeight}}+"px";
 	progress = document.getElementById("progress").style;
 	progress.height = {{boxHeight}}+"px";
-  	updateProgress();
+  	SE_API.store.get('seventyThirtySplit.subCount').then((obj) => {
+      	if (obj) {
+        	currentProgress = obj.currentSubs;
+  			updateProgress();
+        }
+    }); 
 });
 
 function updateProgress() {
