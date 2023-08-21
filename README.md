@@ -27,7 +27,10 @@ Take the code from each of the files in this repository and replace the correspo
 
 Click the DONE button in the bottom right of the popup that you've been replacing code in.
 
-Now under Settings the fields should be different. To change the progress of the goal bar expand 'Set Progress Goal' near the bottom of the section, enter a value, and click 'Set Goal'. 
+Now under Settings the fields should be different. 
+
+To change the progress of the goal bar expand 'Set Progress Goal' near the bottom of the section, enter a value, and click 'Set Goal'. 
+![image](https://github.com/ithasnext/sub-goal-progress-bar/assets/1066827/189de1a0-f207-43a8-a9f1-2b8fd17608ef)
 
 
-Update the defaults with the values you want and have fun!
+Update the defaults and have fun!
