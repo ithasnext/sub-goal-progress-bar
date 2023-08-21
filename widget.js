@@ -20,7 +20,7 @@ window.addEventListener('onEventReceived', function (obj) {
     const listener = obj.detail.listener.split("-")[0];
     const event = obj.detail.event;
   
-	if (event.listener === 'widget-button' && event.field === 'setGoalButton') {
+	if (event.listener === 'widget-button' && event.field === 'setProgressButton') {
 		SE_API.store.set('seventyThirtySplit.subCount', {currentSubs: parseInt(fieldData.currentProgress)});  	
       	currentProgress = parseInt(fieldData.currentProgress);
       	updateProgress();
