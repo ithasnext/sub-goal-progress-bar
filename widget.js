@@ -45,7 +45,7 @@ window.addEventListener('onEventReceived', function (obj) {
         else {
         	currentProgress++;
         }
-		SE_API.store.set('seventyThirtySplit.subCount', {currentSubs: parseInt(fieldData.currentProgress)}); 
+		SE_API.store.set('seventyThirtySplit.subCount', {currentSubs: parseInt(currentProgress)}); 
       	updateProgress();
     }
 });
