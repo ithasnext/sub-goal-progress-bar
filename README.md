@@ -29,7 +29,7 @@ Click the DONE button in the bottom right of the popup that you've been replacin
 
 Now under Settings the fields should be different. 
 
-To change the progress of the goal bar expand 'Set Progress Goal' near the bottom of the section, enter a value, and click 'Set Goal'. 
+To change the progress of the goal bar expand 'Set Goal Progress' near the bottom of the section, enter a value, and click 'Set Progress'. 
 ![image](https://github.com/ithasnext/sub-goal-progress-bar/assets/1066827/189de1a0-f207-43a8-a9f1-2b8fd17608ef)
 
 
