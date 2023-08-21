@@ -27,4 +27,7 @@ Take the code from each of the files in this repository and replace the correspo
 
 Click the DONE button in the bottom right of the popup that you've been replacing code in.
 
-Now under Settings the fields should be different. Update the defauls with the values you want and have fun!
+Now under Settings the fields should be different. To change the progress of the goal bar expand 'Set Progress Goal' near the bottom of the section, enter a value, and click 'Set Goal'. 
+
+
+Update the defaults with the values you want and have fun!
