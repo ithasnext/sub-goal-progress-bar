@@ -9,7 +9,8 @@
     "type": "number",
     "label": "Subscriber progress towards the goal:",
     "value": 0,
-    "step": 1
+    "step": 1,
+    "group": "Set Goal Progress"
   },
   "boxHeight":{
     "type": "number",
@@ -118,5 +119,11 @@
         "flex-end": "Bottom Aligned"
       },
     "group": "Text Settings"
+  },
+  "setGoalButton": {
+    "type": "button",
+    "label": "Set Goal",
+    "value": "updateGoal",
+    "group": "Set Goal Progress"
   }
 }
