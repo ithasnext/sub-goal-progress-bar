@@ -4,7 +4,8 @@ let includePrimeSubs = false,
     currentProgress = 0,
     fontColor = "",
     backgroundColor = "",
-    progressColor = "";
+    progressColor = "",
+    eventIds = {};
 
 let background,
     progress,
@@ -12,38 +13,46 @@ let background,
 
 window.addEventListener('onEventReceived', function (obj) {
     if (!obj.detail.event) {
-      return;
+      	return;
     }
     if (typeof obj.detail.event.itemId !== "undefined") {
         obj.detail.listener = "redemption-latest"
     }
     const listener = obj.detail.listener.split("-")[0];
     const event = obj.detail.event;
-  
-	if (event.listener === 'widget-button' && event.field === 'setProgressButton') {
+  	
+	if (event.listener === 'widget-button' && event.field === 'setGoalButton') {
 		SE_API.store.set('seventyThirtySplit.subCount', {currentSubs: parseInt(fieldData.currentProgress)});  	
       	currentProgress = parseInt(fieldData.currentProgress);
+      	eventIds = {};
       	updateProgress();
 	}
   
   	if (listener === 'subscriber') {
+		if (event.bulkGifted) { // Ignore the inciting bulk gifted event and instead react to each individual sub gift.
+			return;
+	  	}
         if (event.tier === "prime") {
           	if (includePrimeSubs) {
-          		currentProgress++;
+              	if (!event.isTest && eventIds[event.providerId] === undefined) {
+          			currentProgress++;
+                  	eventIds[event.providerId] = true;
+                }
         	}
         }
       	else if (event.gifted) {
         	if (includeGiftSubs) {
-          		currentProgress++;
+              	if (!event.isTest && eventIds[event.providerId] === undefined) {
+          			currentProgress++;
+                  	eventIds[event.providerId] = true;
+                }
         	}
 		}
-      	else if (event.bulkGifted) {
-          	if (includeGiftSubs) {
-            	currentProgress += event.amount;
-            }
-		}
         else {
-        	currentProgress++;
+          if (!event.isTest && eventIds[event.providerId] === undefined) {
+            currentProgress++;
+            eventIds[event.providerId] = true;
+          }
         }
 		SE_API.store.set('seventyThirtySplit.subCount', {currentSubs: parseInt(currentProgress)}); 
       	updateProgress();
@@ -52,8 +61,8 @@ window.addEventListener('onEventReceived', function (obj) {
 
 window.addEventListener('onWidgetLoad', function (obj) {
   	fieldData = obj.detail.fieldData;
-  	includePrimeSubs = (fieldData.includePrimeSubs === "yes");
-	includeGiftSubs = (fieldData.includeGiftSubs === "yes");
+  	includePrimeSubs = (fieldData.includePrimeSubs === true);
+	includeGiftSubs = (fieldData.includeGiftSubs === true);
     subGoal = parseInt(fieldData.subGoal);
   	background = document.getElementById("background").style;
     background.width = {{boxWidth}}+"px";
