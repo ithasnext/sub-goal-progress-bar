@@ -22,7 +22,7 @@ window.addEventListener('onEventReceived', function (obj) {
     const event = obj.detail.event;
   	
 	if (event.listener === 'widget-button' && event.field === 'setGoalButton') {
-		SE_API.store.set('customSubGoalTracker.subCount', {currentSubs: parseInt(fieldData.currentProgress)});  	
+		SE_API.store.set('seventyThirtySplit.subCount', {currentSubs: parseInt(fieldData.currentProgress)});  	
       	currentProgress = parseInt(fieldData.currentProgress);
       	eventIds = {};
       	updateProgress();
@@ -54,7 +54,7 @@ window.addEventListener('onEventReceived', function (obj) {
             eventIds[event.providerId] = true;
           }
         }
-		SE_API.store.set('customSubGoalTracker.subCount', {currentSubs: parseInt(currentProgress)}); 
+		SE_API.store.set('seventyThirtySplit.subCount', {currentSubs: parseInt(currentProgress)}); 
       	updateProgress();
     }
 });
@@ -69,7 +69,7 @@ window.addEventListener('onWidgetLoad', function (obj) {
 	background.height = {{boxHeight}}+"px";
 	progress = document.getElementById("progress").style;
 	progress.height = {{boxHeight}}+"px";
-  	SE_API.store.get('customSubGoalTracker.subCount').then((obj) => {
+  	SE_API.store.get('seventyThirtySplit.subCount').then((obj) => {
       	if (obj) {
         	currentProgress = obj.currentSubs;
   			updateProgress();
