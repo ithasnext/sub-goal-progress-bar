@@ -120,10 +120,31 @@
       },
     "group": "Text Settings"
   },
-  "setProgressButton": {
+  "setGoalButton": {
     "type": "button",
-    "label": "Set Progress",
+    "label": "Set Goal",
     "value": "updateGoal",
     "group": "Set Goal Progress"
+  },
+  "setTierOneValue": {
+    "type": "number",
+    "label": "The amount each Tier One sub will increase the goal progress by",
+    "value": 1,
+    "step": 1,
+    "group": "Tier Value Amounts"
+  },
+  "setTierTwoValue": {
+    "type": "number",
+    "label": "The amount each Tier Two sub will increase the goal progress by",
+    "value": 2,
+    "step": 1,
+    "group": "Tier Value Amounts"
+  },
+  "setTierThreeValue": {
+    "type": "number",
+    "label": "The amount each Tier Three sub will increase the goal progress by",
+    "value": 6,
+    "step": 1,
+    "group": "Tier Value Amounts"
   }
 }
