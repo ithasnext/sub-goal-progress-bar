@@ -122,7 +122,7 @@
   },
   "setGoalButton": {
     "type": "button",
-    "label": "Set Goal",
+    "label": "Set Progress",
     "value": "updateGoal",
     "group": "Set Goal Progress"
   },
